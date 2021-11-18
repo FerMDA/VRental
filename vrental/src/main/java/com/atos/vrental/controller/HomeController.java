@@ -4,13 +4,13 @@
  */
 package com.atos.vrental.controller;
 
-import com.atos.vrental.entity.Client;
-import com.atos.vrental.service.ClientService;
+import com.atos.vrental.entity.Clientes;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import com.atos.vrental.service.ClientesService;
 
 /**
  *
@@ -20,12 +20,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
     
     @Autowired
-    private ClientService clientService;
+    private ClientesService clientService;
     
     @GetMapping(value = "/")
     public String home(Model model){
-        List<Client> clients = clientService.getAll();
-        model.addAttribute("clients", clients);
+        //List<Clientes> clients = clientService.getAll();
+        String datos = clientService.getAllClientes();
+        model.addAttribute("clients", datos);
         model.addAttribute("name", "Fernando");
         return "home";
     }

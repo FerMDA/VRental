@@ -24,20 +24,20 @@
                 <div class="col">
                     <form action="#" th:action="@{/clients/save}" th:object="${client}" method="post">
                         <div class="form-group" >
-                            <label for="firstname">Nombre</label>
+                            <label for="nombre">Nombre</label>
                             <input type="text" class="form-control"
-                                   th:field="*{firstname}" id="firstname" required="true">
-                                <p class="alert alert-danger" th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}" />
+                                   th:field="*{nombre}" id="nombre" required="true">
+                                <p class="alert alert-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" />
                         </div>
                         <div class="form-group" >
-                            <label for="lastname">Apellidos</label>
+                            <label for="apellido">Apellidos</label>
                             <input type="text" class="form-control"
-                                   th:field="*{lastname}" id="lastname" required="true">
+                                   th:field="*{apellido}" id="apellido" required="true">
                         </div>
                         <div class="form-group" >
-                            <label for="phone">Telefono</label>
+                            <label for="telefono">Telefono</label>
                             <input type="tel" class="form-control"
-                                   th:field="*{phone}" id="phone" required="true" >
+                                   th:field="*{telefono}" id="telefono" required="true" >
                         </div>
                         <tr>
                             <button type="submit" >Guardar</button>
